@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java.config" />
+        <module name="javaconfig" />
+        <module name="javaxml" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java.config" target="10" />
+      <module name="javaconfig" target="10" />
+      <module name="javaxml" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/template/java.config.iml" filepath="$PROJECT_DIR$/template/java.config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/template/javaconfig.iml" filepath="$PROJECT_DIR$/template/javaconfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaxml/javaxml.iml" filepath="$PROJECT_DIR$/javaxml/javaxml.iml" />
     </modules>
   </component>
 </project>
