@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
@@ -35,6 +36,19 @@ public class WebConfig extends WebMvcConfigurationSupport {
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
         viewResolver.setExposeContextBeansAsAttributes(true);
+        return viewResolver;
+    }
+
+    /*
+    * 自定义视图内容渲染配置
+    * 定义一个实现View 的bean
+    * 实现接口即可
+    * ReqMap( default=path)-> String: "beanName"
+    * */
+    @Bean
+    public BeanNameViewResolver beanNameViewResolver(){
+        BeanNameViewResolver viewResolver = new BeanNameViewResolver();
+        viewResolver.setOrder(10);
         return viewResolver;
     }
 
