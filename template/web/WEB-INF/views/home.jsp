@@ -13,6 +13,8 @@
 <body>
 
 home.jsp
+${requestScope.xxx}++++>>>
+${xxx}
 
 </body>
 </html>
