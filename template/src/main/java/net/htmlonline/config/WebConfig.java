@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -22,7 +23,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 //声明为spring的配置类
 @Configuration
 //开启springMvc
-@EnableWebMvc
+// *******************  EnableWebMvc ==   extends WebMvcConfigurationSupport 可以取消了
+// ### @EnableWebMvc
 //开启组件扫描，注意只扫描web相关的内容
 @ComponentScan("net.htmlonline.controller")
 public class WebConfig extends WebMvcConfigurationSupport {
@@ -59,5 +61,15 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    /**
+     * 添加静态资源支持
+     * // @EnableWebMvc需要取消
+     * */
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+        super.addResourceHandlers(registry);
     }
 }
